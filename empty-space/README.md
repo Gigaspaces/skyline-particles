@@ -13,7 +13,8 @@ docker build . -t empty-space:0.1
 3. Prepare your cluster and image repository (minikube)
 ```
 minikube start
-helm install skyline gs/smart-cache --version=16.5.0-m10-1
+helm add repo xap https://resources.gigaspaces.com/helm-charts-ea
+helm install skyline xap/smart-cache --version=16.5.0-m10-1
 minikube image load empty-space:0.1
 ```
 
