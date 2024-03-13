@@ -3,6 +3,7 @@
 ## module1: empty-space
 1. build with 
 ```
+cd empty-space
 mvn clean install
 ```
 2. build docker image
@@ -17,13 +18,13 @@ minikube image load empty-space:0.1
 ```
 4. install xap-skyline and expose the spacedeck
 ```
-helm add repo xap https://resources.gigaspaces.com/helm-charts-ea
+helm repo add xap https://resources.gigaspaces.com/helm-charts-ea
 
 helm install skyline xap/smart-cache --version=16.5.0-m10-1
 
-kubectl port-forward <spacedeck pod name> 4200
+kubectl port-forward <spacedeck pod name> 4200 &
 ```
-5. Run empty-space on xap-skyline (kubernetes cluster with smart-cache installed)
+5. Wait for the pods to be ready and run empty-space on xap-skyline (kubernetes cluster with smart-cache installed)
 ```
 helm install space xap/xap-pu --version 16.5.0-m10 \
 --set instances=0,partitions=1 \
