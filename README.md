@@ -17,7 +17,7 @@ helm install skyline xap/smart-cache --version=16.5.0-m10-1 --set global.securit
 ```
 3. Wait for all pods to be ready
 
-## module1: Empty Space <a name="empty-space"></a>
+## module 1: Empty Space <a name="empty-space"></a>
 1. build the module
 ```
 cd empty-space
@@ -39,14 +39,14 @@ helm install empty-space xap/xap-pu --version 16.5.0-m10 \
 kubectl port-forward <spacedeck pod name> 4200 &
 ```
 
-####Testing
+#### Testing
 In your browser go to - http://localhost:4200
 In the "Data Query" page you can:
 - create a table
 - insert
 - query
 
-## module2: data-driven <a name="data-driven"></a>
+## module 2: Data Driven <a name="data-driven"></a>
 1. build with 
 ```
 cd data-driven
@@ -68,7 +68,7 @@ helm install data-driven xap/xap-pu --version 16.5.0-m10 \
 kubectl port-forward <spacedeck pod name> 4200 &
 ```
 
-####Testing
+#### Testing
 In your browser go to - http://localhost:4200
 In the "Data Query" page you can:
 - insert data for example:
