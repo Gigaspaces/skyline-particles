@@ -32,7 +32,7 @@ minikube image load empty-space:0.1
 ```
 helm install empty-space xap/xap-pu --version 16.5.0-m10 \
 --set instances=0,partitions=1 \
---set resourceUrl=pu.jar,image.repository=data-driven,image.tag=0.1
+--set resourceUrl=pu.jar,image.repository=empty-space,image.tag=0.1
 ```
 4. Enable access to spacedeck
 ```
@@ -73,5 +73,7 @@ In your browser go to - http://localhost:4200
 In the "Data Query" page you can:
 - insert data for example:
 ```
-INSERT INTO "com.mycompany.app.Account" (accountId, districtId, accountType, creationDateYymmdd) VALUES(123, 100, 'STOKES', 240317) 
+INSERT INTO "com.mycompany.app.Account" (accountId, districtId, accountType, creationDateYymmdd) VALUES(123, 100, 'STOCKS', 240317) 
+
+SELECT * FROM "com.mycompany.app.Account" WHERE accountType='SAVINGS'
 ```
